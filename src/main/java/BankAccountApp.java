@@ -9,5 +9,6 @@ public class BankAccountApp {
         Bank bank = new Bank();
         Account createdAccount = bank.createAccount("Alice");
         createdAccount.deposit(BigDecimal.valueOf(100));
+        createdAccount.withdrawal(BigDecimal.valueOf(50));
     }
 }

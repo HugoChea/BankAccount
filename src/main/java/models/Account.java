@@ -41,4 +41,18 @@ public class Account {
     public void deposit(BigDecimal amount){
         this.balance = this.balance.add(amount);
     }
+
+    /**
+     * Decrease balance by given amount if possible
+     * @param amount
+     * @throws RuntimeException if amount required superior to account balance
+     */
+    public void withdrawal(BigDecimal amount){
+        if (this.balance.compareTo(amount) == -1){
+            throw new RuntimeException("Not enough money in your account");
+        }
+        else{
+            this.balance = this.balance.subtract(amount);
+        }
+    }
 }
